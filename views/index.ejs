@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <% if(list[0].notes.length == 0){ %>
+        <div class="nolist">
+            <h1>Welcome <%= list[0].username %></h1><br>
+            <h2>No Task Added Yet!</h2><br>
+        <a href="/add">Click Here to add One</a>
+        </div>
+        
+    <% }else{ %>
+    <% for(let i=0;i<list[0].notes.length;i++){ %>
+        <div class="todo-box">         
+            <h1>Task <%= i+1 %></h1>
+           <% if(list[0].notes[i].content.length > 200){ %>
+            <p><%= list[0].notes[i].content.substring(0,200) +'...'%><a href="/view/<%= list[0].notes[i].id %>/<%= i+1 %>">Read More</a></p>
+            <% }else{ %>
+                <p><%= list[0].notes[i].content %></p>
+            <% } %>
+            <div>
+            <form action="/delete" method="post">
+                <button class="delete" type="submit" name="delete" value="<%= list[0].notes[i].id %>">❌</button>
+            </form>
+            <form action="/update" method="get">
+                <button class="update" type="submit" name="update" value="<%= list[0].notes[i].id %>">📝</button>
+            </form>
+        </div>
+        </div>      
+        <% } %>
+        <% } %>
+</div>
+<div class="add-icon"><a href="/add">+</a></div>
+<%- include('partials/footer.ejs') %>

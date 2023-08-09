@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+    <div class="login">
+
+            
+            <form action="/register" method="post" >
+                <h1>Register</h1>
+                <label for="username">Enter Username</label>
+                <input type="text" name="username">
+                <label for="password">Enter Password</label>
+                <input type="password" name="password">
+                <label for="re-password">Re-Enter Password</label>
+                <input type="password" name="re-password">
+                <button type="submit">Register</button>
+                <a href="/login">Have an Account? Login!</a>
+            </form>
+
+
+</div>
+<%- include('partials/footer.ejs') %>

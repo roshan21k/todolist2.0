@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Dancing+Script&family=Edu+SA+Beginner&family=Handjet:wght@300&family=Montserrat+Alternates&family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<nav class="navbar">
+    <span>TodoList 📃</span>
+    <% if(auth){ %>
+    <ul>
+        <li class="links"> <a  href="/add">Add Task</a> </li>
+       <li><a href="/index">Home</a></li>
+       <li> <a href="/logout">Logout</a> </li>
+    </ul>
+    <% } %>
+</nav>
+
+<% if(messages.error){ %>
+    <div class="flashbox">
+        <div class="error">
+            <h4><%= messages.error %></h4>
+        </div>
+    </div>
+<% }else if(messages.success){  %>
+    <div class="flashbox">
+        <div class="success">
+            <h4><%= messages.success %></h4>
+        </div>
+    </div>
+<% } %>

@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+    <div class="login">
+
+            
+            <form action="/update" method="post" >
+                <h1>Edit your Task here</h1><br>
+                <label for =oldcontent> Your Old Task </label>
+                <textarea class='fixed'name="oldcontent" id="" cols="30" rows="10"  readonly><%= oldcontent[0].notes[0].content%></textarea>
+                <label for =oldcontent> Updated Task </label>
+                <textarea name="updatecontent" cols="30" rows="10" required></textarea>
+                <button type="submit" name ='update' value="<%=noteId  %>">Submit</button>
+            </form>
+
+
+</div>
+<%- include('partials/footer.ejs') %>

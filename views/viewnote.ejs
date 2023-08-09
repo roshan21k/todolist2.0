@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+<div class="todo-box">         
+    <h1>Task <%= num %></h1>
+        <p><%= viewContent[0].notes[0].content %></p>
+    <div>
+    <form action="/delete" method="post">
+        <button class="delete" type="submit" name="delete" value="<%= noteid %>">❌</button>
+    </form>
+    <form action="/update" method="get">
+        <button class="update" type="submit" name="update" value="<%= noteid %>">📝</button>
+    </form>
+</div>
+</div>
+</div>   
+   
+<%- include('./partials/footer.ejs') %>
