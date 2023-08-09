@@ -19,7 +19,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash())
-mongoose.connect("mongodb://0.0.0.0:27017/todolist").then(()=>console.log("database connected")).catch(err => console.log(err));
+mongoose.connect("mongodb+srv://todolistnew:test123@cluster0.bms1tjx.mongodb.net/?retryWrites=true&w=majority").then(()=>console.log("database connected")).catch(err => console.log(err));
 
 const UserSchema = new mongoose.Schema({
     username:String,
