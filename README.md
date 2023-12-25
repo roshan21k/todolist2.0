@@ -47,5 +47,5 @@ Feel free to explore and use the Todo List web application!
 
 ## Screenshots
 
-![TODO LIST](todo list.png)
+![TODO LIST](todolist.png)
 
